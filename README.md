@@ -1,22 +1,22 @@
-# React + TypeScript + Vite
+# WEB502_BASE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is a Vite + React + TypeScript starter used for the WEB502 course.
 
-Currently, two official plugins are available:
+It includes a minimal React + TypeScript setup with Vite, ESLint configuration hints, and example pages under `src/pages`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Notes and tips
+
+- Two official Vite React plugins are available:
+  - `@vitejs/plugin-react` (Babel-based Fast Refresh)
+  - `@vitejs/plugin-react-swc` (SWC-based Fast Refresh)
 
 ## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
+If you're developing a production application, consider enabling type-aware lint rules. Example `parserOptions` configuration:
 
 ```js
 export default tseslint.config({
   languageOptions: {
-    // other options...
     parserOptions: {
       project: ['./tsconfig.node.json', './tsconfig.app.json'],
       tsconfigRootDir: import.meta.dirname,
@@ -25,26 +25,14 @@ export default tseslint.config({
 })
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Replace `tseslint.configs.recommended` with `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked` for stricter checks.
+- Optionally add `...tseslint.configs.stylisticTypeChecked`.
+- To use React-specific lint rules, install `eslint-plugin-react` and add it to `eslint.config.js`.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Folder layout
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- `src/` - application source
+- `public/` - static assets
+- `db.json` - sample data (excluded from git in this repository's .gitignore)
+
+Enjoy working with the project!
