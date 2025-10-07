@@ -5,6 +5,7 @@ import List from './pages/List'
 import Add from './pages/Add'
 import Edit from './pages/Edit'
 import ProductDetail from './pages/ProductDetail'
+import Users from './components/User'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/List" replace />} />
           <Route path="List" element={<List />} />
+          <Route path="users" element={<Users />} />
           <Route path="Add" element={<Add />} />
           <Route path="Edit/:id?" element={<Edit />} />
           <Route path="products/:id" element={<ProductDetail />} />
