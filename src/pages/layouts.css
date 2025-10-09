@@ -1,0 +1,14 @@
+/* Minimal layout styling for Client and Admin */
+.client-root .hero {
+  background-image: linear-gradient(90deg, rgba(99,102,241,0.08), rgba(99,102,241,0.02));
+}
+
+.admin-root { height: 100vh; }
+.admin-sidebar { width: 220px; }
+.admin-sidebar .nav-link { padding: 0.5rem 0; }
+.admin-main { overflow: auto; }
+
+@media (max-width: 768px) {
+  .admin-root { flex-direction: column; }
+  .admin-sidebar { width: 100%; }
+}
